@@ -36,7 +36,7 @@
 
       a {
         text-decoration: none;
-        color: var(--accent);
+        color: currentColor;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -46,19 +46,37 @@
       }
 
       .container {
-        max-width: 1400px;
-        padding-left: 20px;
-        padding-right: 20px;
+        max-width: 1200px;
+        padding: 0 20px;
+        margin: 0 auto;
       }
 
       .big-text {
         font-family: var(--japanese-font);
         font-size: 18px;
         line-height: 1.7em;
+        margin-top: 0;
       }
 
       .big-text + .big-text {
         margin-top: 30px;
+      }
+
+      .big-text a {
+        color: var(--accent);
+      }
+
+      @media screen and (min-width: 641px) {
+        .container {
+          padding-left: 60px;
+          padding-right: 60px;
+        }
+      }
+
+      @media screen and (min-width: 1000px) {
+        .big-text {
+          font-size: 28px;
+        }
       }
 
       /* MAIN */
@@ -79,6 +97,19 @@
         height: 175px;
         background: var(--accent);
         border-radius: 100%;
+      }
+
+      @media screen and (min-width: 1000px) {
+        .main {
+          padding-bottom: 535px;
+        }
+
+        .main::after {
+          width: 585px;
+          height: 585px;
+          bottom: -100px;
+          right: -130px;
+        }
       }
 
       /* HEADER */
@@ -110,6 +141,27 @@
         color: var(--accent);
       }
 
+      @media screen and (min-width: 1000px) {
+        .header {
+          margin-top: 20px;
+        }
+        
+        .header__wrapper {
+          display: flex;
+        }
+
+        .header__title {
+          font-size: 116px;
+          max-width: 600px;
+        }
+
+        .header__info {
+          margin-top: 60px;
+          margin-left: 100px;
+          font-size: 15px;
+        }
+      }
+
       /* SECTION */
 
       .section + .section {
@@ -133,6 +185,44 @@
 
       .section__content {
         margin-top: 24px;
+      }
+
+      @media screen and (min-width: 1000px) {
+        .section {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          max-width: 950px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .section + .section {
+          margin-top: 215px;
+        }
+
+        .section__title-container {
+          flex-shrink: 0;
+          font-size: 15px;
+        }
+
+        .section__title--highlight {
+          margin-bottom: 14px;
+        }
+
+        .section__content {
+          margin-top: 0;
+          margin-left: 120px;
+        }
+
+        .section--reverse {
+          flex-direction: row-reverse;
+        }
+
+        .section--reverse .section__content {
+          margin-left: 0;
+          margin-right: 120px;
+        }
       }
 
       /* THEME LIST */
@@ -230,18 +320,26 @@
         background: var(--accent);
         z-index: -1;
       }
+
+      @media screen and (min-width: 1000px) {
+        #about::before {
+          display: none;
+        }
+      }
     </style>
   </head>
 
   <body>
     <header class="header" role="banner">
       <div class="container">
-        <h1 class="header__title">Michaël Gallego</h1>
+        <div class="header__wrapper">
+          <h1 class="header__title">Michaël Gallego</h1>
 
-        <div class="header__info">
-          <span class="header__info-item">Shopify developer</span>
-          <span class="header__info-item">Front-end</span>
-          <a href="mailto:mic.gallego@gmail.com" class="header__info-item header__info-item--highlight">Get in touch</a>
+          <div class="header__info">
+            <span class="header__info-item">Shopify developer</span>
+            <span class="header__info-item">Front-end</span>
+            <a href="mailto:mic.gallego@gmail.com" class="header__info-item header__info-item--highlight">Get in touch</a>
+          </div>
         </div>
       </div>
     </header>
@@ -262,7 +360,7 @@
           </div>
         </section>
 
-        <section id="japan" class="section">
+        <section id="japan" class="section section--reverse">
           <div class="section__title-container">
             <h2 class="section__title section__title--highlight">日本</h2>
             <span class="section__title">Japan</span>
@@ -282,11 +380,25 @@
 
           <div class="section__content">
             <ol class="theme-list">
-              <li class="theme-list__item">Warehouse</li>
-              <li class="theme-list__item">Prestige</li>
-              <li class="theme-list__item">Kagami</li>
-              <li class="theme-list__item">Trademark</li>
-              <li class="theme-list__item">Focal</li>
+              <li class="theme-list__item">
+                <a href="https://themes.shopify.com/themes/warehouse/styles/metal" target="_blank">Warehouse</a>
+              </li>
+
+              <li class="theme-list__item">
+                <a href="https://themes.shopify.com/themes/prestige/styles/allure" target="_blank">Prestige</a>
+              </li>
+
+              <li class="theme-list__item">
+                <a href="https://themes.shopify.com/themes/kagami/styles/kyoto" target="_blank">Kagami</a>
+              </li>
+
+              <li class="theme-list__item">
+                <a href="https://themes.shopify.com/themes/trademark/styles/gold" target="_blank">Trademark</a>
+              </li>
+
+              <li class="theme-list__item">
+                <a href="https://themes.shopify.com/themes/focal/styles/standard" target="_blank">Focal</a>
+              </li>
             </ol>
           </div>
         </section>
@@ -312,7 +424,7 @@
           </div>
         </section>
 
-        <section id="contact" class="section">
+        <section id="contact" class="section section--reverse">
           <div class="section__title-container">
             <h2 class="section__title section__title--highlight">問い合わせ</h2>
             <span class="section__title">Contact</span>
