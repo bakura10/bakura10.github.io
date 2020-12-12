@@ -1,10 +1,366 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
+
+    <title>Michael Gallego - Shopifyのコンサルティング</title>
+    <meta name="description" content="コンサルティングが必要な方、Shopifyの問題を抱えている方、Shopifyを最大限に活用するためのサポートが必要な方は、お気軽にお問い合わせください。">
+    <link rel="alternate" hreflang="x-default" href="https://www.shopify-sapporo.com">
+    <link rel="alternate" hreflang="en" href="https://www.shopify-sapporo.com/en">
+    <link rel="alternate" hreflang="ja" href="https://www.shopify-sapporo.com/ja">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap&subset=japanese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --background: #dddddd;
+        --accent: #d43838;
+        --text: #000000;
+        --text-subdued: #818181;
+        --background-text: #ffffff;
+
+        --latin-font: 'DM Sans', sans-serif;
+        --japanese-font: 'Noto Serif JP', serif;
+      }
+
+      body {
+        margin: 0;
+        background: var(--background);
+        color: var(--text);
+        font-family: var(--latin-font);
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--accent);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-size: inherit;
+        font-weight: inherit;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 1400px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .big-text {
+        font-family: var(--japanese-font);
+        font-size: 18px;
+        line-height: 1.7em;
+      }
+
+      .big-text + .big-text {
+        margin-top: 30px;
+      }
+
+      /* MAIN */
+
+      .main {
+        position: relative;
+        padding-bottom: 160px;
+        overflow: hidden;
+      }
+
+      .main::after {
+        position: absolute;
+        display: block;
+        content: '';
+        bottom: -68px;
+        right: -80px;
+        width: 175px;
+        height: 175px;
+        background: var(--accent);
+        border-radius: 100%;
+      }
+
+      /* HEADER */
+
+      .header {
+        margin-bottom: 115px;
+      }
+
+      .header__title {
+        margin: 15px 0;
+        font-size: 50px;
+        color: var(--background-text);
+        text-transform: uppercase;
+        line-height: 0.95em;
+        letter-spacing: -3.2px;
+      }
+
+      .header__info {
+        margin-top: 18px;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .header__info-item {
+        display: block;
+      }
+
+      .header__info-item--highlight {
+        color: var(--accent);
+      }
+
+      /* SECTION */
+
+      .section + .section {
+        margin-top: 115px;
+      }
+
+      .section__title-container {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      .section__title {
+        color: var(--text-subdued);
+      }
+
+      .section__title--highlight {
+        color: var(--accent);
+        font-family: var(--japanese-font);
+        margin-bottom: 8px;
+      }
+
+      .section__content {
+        margin-top: 24px;
+      }
+
+      /* THEME LIST */
+
+      .theme-list {
+        list-style: none;
+        text-transform: uppercase;
+        font-size: 35px;
+        counter-reset: theme-counter;
+        padding: 0;
+        line-height: 1.15em;
+      }
+
+      .theme-list__item {
+        display: flex;
+        align-items: center;
+        counter-increment: theme-counter;
+      }
+
+      .theme-list__item::before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        content: '0' counter(theme-counter);
+        width: 26px;
+        height: 26px;
+        font-size: 9px;
+        border: 1px solid currentColor;
+        border-radius: 100%;
+      }
+
+      /* LOGO LIST */
+
+      .logo-list {
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .logo-list__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .logo-list__item + .logo-list__item {
+        margin-left: 50px;
+      }
+
+      .logo-list__image {
+        flex: 1 0 auto;
+        object-fit: contain;
+      }
+
+      .logo-list__name {
+        display: block;
+        margin-top: 18px;
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+
+      /* TABLE */
+
+      .table {
+        font-size: 13px;
+      }
+
+      .table td {
+        padding: 20px 0;
+        border-bottom: 1px solid #ffffff;
+        min-width: 60px;
+      }
+
+      .table td:not(:first-child) {
+        padding-left: 20px;
+      }
+
+      /* SPECIAL SECTION */
+
+      #about {
+        position: relative;
+      }
+
+      #about::before {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 240px;
+        height: 240px;
+        left: -105px;
+        bottom: -65px;
+        border-radius: 100%;
+        background: var(--accent);
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header" role="banner">
+      <div class="container">
+        <h1 class="header__title">Michaël Gallego</h1>
+
+        <div class="header__info">
+          <span class="header__info-item">Shopify developer</span>
+          <span class="header__info-item">Front-end</span>
+          <a href="mailto:mic.gallego@gmail.com" class="header__info-item header__info-item--highlight">Get in touch</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main" role="main">
+      <div class="container">
+        <section id="about" class="section">
+          <div class="section__title-container">
+            <h2 class="section__title section__title--highlight">私について</h2>
+            <span class="section__title">About</span>
+          </div>
+
+          <div class="section__content">
+            <p class="big-text">私は2013年に共同設立者としてMaestroooを設立しました。その後、MaestroooはShopifyのヨーロッパのリーダーとなり、
+            フランスでは初のShopify Plusパートナーとなりました。</p>
+            <p class="big-text">世界中の何千ものマーチャントに高品質のテーマやアプリ、カスタムeコマースストアを
+              提供しています。</p>
+          </div>
+        </section>
+
+        <section id="japan" class="section">
+          <div class="section__title-container">
+            <h2 class="section__title section__title--highlight">日本</h2>
+            <span class="section__title">Japan</span>
+          </div>
+
+          <div class="section__content">
+            <p class="big-text">2018年に日本の札幌に移住した後に自身の会社を設立し、Maestroooの新しいShopifyテーマのサポートや開発を
+              続けてきました。その後、日本で急速に成功を収めているShopifyの専門知識を日本の企業にもたらすためのコンサルティングも始めました。</p>
+          </div>
+        </section>
+
+        <section id="themes" class="section">
+          <div class="section__title-container">
+            <h2 class="section__title section__title--highlight">Shopifyのテーマ</h2>
+            <span class="section__title">Shopify Themes</span>
+          </div>
+
+          <div class="section__content">
+            <ol class="theme-list">
+              <li class="theme-list__item">Warehouse</li>
+              <li class="theme-list__item">Prestige</li>
+              <li class="theme-list__item">Kagami</li>
+              <li class="theme-list__item">Trademark</li>
+              <li class="theme-list__item">Focal</li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="consulting" class="section">
+          <div class="section__title-container">
+            <h2 class="section__title section__title--highlight">コンサルティング</h2>
+            <span class="section__title">Consulting</span>
+          </div>
+
+          <div class="section__content">
+            <div class="logo-list">
+              <div class="logo-list__item">
+                <img class="logo-list__image" src="flagship.png" alt="Flagship" style="width: 70px; height: 70px;">
+                <span class="logo-list__name">FlagShip LLC</span>
+              </div>
+
+              <div class="logo-list__item">
+                <img class="logo-list__image" src="maestrooo.png" alt="Maestrooo" style="width: 60px; height: 40px;">
+                <span class="logo-list__name">Maestrooo</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <div class="section__title-container">
+            <h2 class="section__title section__title--highlight">問い合わせ</h2>
+            <span class="section__title">Contact</span>
+          </div>
+
+          <div class="section__content">
+            <p class="big-text">コンサルティングが必要な方、Shopifyの問題を抱えている方、Shopifyを最大限に活用するためのサポートが必要な方は、
+              <a href="mailto:mic.gallego@gmail.com">こちらをクリック</a>してお気軽にお問い合わせください。私はフランス語、英語、
+              それに基本的な日本語を話すことができます。</p>
+          </div>
+        </section>
+
+        <section id="company" class="section">
+          <div class="section__title-container">
+            <h2 class="section__title section__title--highlight">企業情報</h2>
+            <span class="section__title">Company information</span>
+          </div>
+
+          <div class="section__content">
+            <table class="table">
+              <tr>
+                <td>名称</td>
+                <td>Gallego合同会社</td>
+              </tr>
+
+              <tr>
+                <td>代表</td>
+                <td>ガレゴ　ミカエル　(Gallego Michael)</td>
+              </tr>
+
+              <tr>
+                <td>事業内容</td>
+                <td>ECシステムの開発及びコンサルティング</td>
+              </tr>
+
+              <tr>
+                <td>設立</td>
+                <td>2019.2.18</td>
+              </tr>
+
+              <tr>
+                <td>本社</td>
+                <td>〒064-0821 札幌市中央区北１条南２７丁目１−６−２０６シャトー２７</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
